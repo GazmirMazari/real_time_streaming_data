@@ -2,6 +2,7 @@ name: golangci-lint
 on:
   push:
     branches:
+      - master
       - develop
   pull_request:
 
