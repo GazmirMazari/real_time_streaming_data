@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 FROM golang:1.21
 
 
@@ -32,3 +33,6 @@ USER nonroot:nonroot
 ENTRYPOINT ["docker-app"]
 
 
+=======
+from base 
+>>>>>>> main
