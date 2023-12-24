@@ -2,20 +2,23 @@ name: go-test
 on: push
 
 permissions:
-    contents: read
-    # Optional: allow read access to pull request. Use with `only-new-issues` option.
-    # pull-requests: read
+  contents: read
+  # Optional: allow read access to pull requests. Use with `only-new-issues` option.
+  # pull-requests: read
 
 jobs:
-    build-and-test:
-        name: Build and Test
-        runs-on: ubuntu-latest  # Specify the runner environment
-    
-        steps:
-        - name: Checkout code
-        uses: actions/checkout@v2  # If you're using GitHub Actions
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest  # Specify the runner environment
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Checks-out your repository under $GITHUB_WORKSPACE
+
+      - name: Set up Go
         uses: actions/setup-go@v4
         with:
-            go-version: '1.21'  # Specify your Go version
-        - name: Test
-        run: go test -v ./...
+          go-version: '1.21'  # Specify your Go version
+
+      - name: Test
+        run: go test -v ./...  # Run Go tests
